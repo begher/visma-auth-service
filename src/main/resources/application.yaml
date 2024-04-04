@@ -1,0 +1,34 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          visma:
+            client-id: imatsab
+            client-secret: M2wAPQ2Y8Q25YHoLEkoA40B4Cv72f6XZGF7ZYZK91380AY98O07R8D7hVMy1vF8
+            authorization-grant-type: authorization_code
+            redirect-uri: https://api.imats.se/visma-auth-service
+            scope:
+              - ea:api
+              - ea:sales
+              - ea:purchase
+              - ea:accounting
+              - offline_access
+
+        provider:
+          visma:
+            authorization-uri: https://identity.vismaonline.com/connect/authorize
+            token-uri: https://identity.vismaonline.com/connect/token
+            user-info-uri: https://identity.vismaonline.com/connect/userinfo
+            jwk-set-uri: https://identity.vismaonline.com/connect/jwks
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: password
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+
+
