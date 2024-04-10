@@ -7,7 +7,7 @@ spring:
             client-id: imatsab
             client-secret: M2wAPQ2Y8Q25YHoLEkoA40B4Cv72f6XZGF7ZYZK91380AY98O07R8D7hVMy1vF8
             authorization-grant-type: authorization_code
-            redirect-uri: https://api.imats.se/visma-auth-service
+            redirect-uri: https://api.imats.se/visma-auth-service/login/oauth2/code/visma
             scope:
               - ea:api
               - ea:sales
@@ -23,9 +23,10 @@ spring:
             jwk-set-uri: https://identity.vismaonline.com/connect/jwks
 
   datasource:
-    url: jdbc:h2:mem:testdb
-    username: sa
-    password: password
+    url: jdbc:postgresql://postgres/postgres
+    username: begh
+    password: hemligt
+    driver-class-name: org.postgresql.Driver
 
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
