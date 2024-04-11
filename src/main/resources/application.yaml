@@ -17,10 +17,10 @@ spring:
 
         provider:
           visma:
-            authorization-uri: https://identity.vismaonline.com/connect/authorize
-            token-uri: https://identity.vismaonline.com/connect/token
-            user-info-uri: https://identity.vismaonline.com/connect/userinfo
-            jwk-set-uri: https://identity.vismaonline.com/connect/jwks
+            authorization-uri: https://identity-sandbox.test.vismaonline.com/connect/authorize
+            token-uri: https://identity-sandbox.test.vismaonline.com/connect/token
+            user-info-uri: https://identity-sandbox.test.vismaonline.com/connect/userinfo
+            jwk-set-uri: https://identity-sandbox.test.vismaonline.com/connect/jwks
 
   datasource:
     url: jdbc:postgresql://postgres/postgres
