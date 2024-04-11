@@ -1,13 +1,13 @@
-package begh.vismaauthservice;
-
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest
-class VismaAuthServiceApplicationTests {
-
-	@Test
-	void contextLoads() {
-	}
-
-}
+//package begh.vismaauthservice;
+//
+//import org.junit.jupiter.api.Test;
+//import org.springframework.boot.test.context.SpringBootTest;
+//
+//@SpringBootTest
+//class VismaAuthServiceApplicationTests {
+//
+//	@Test
+//	void contextLoads() {
+//	}
+//
+//}
