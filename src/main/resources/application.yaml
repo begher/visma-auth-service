@@ -22,11 +22,11 @@ spring:
             user-info-uri: https://identity-sandbox.test.vismaonline.com/connect/userinfo
             jwk-set-uri: https://identity-sandbox.test.vismaonline.com/connect/jwks
 
-  datasource:
-    url: jdbc:postgresql://postgres/postgres
-    username: begh
-    password: hemligt
-    driver-class-name: org.postgresql.Driver
+  #datasource:
+    #url: jdbc:postgresql://postgres/postgres
+    #username: begh
+    #password: hemligt
+    #driver-class-name: org.postgresql.Driver
 
 
 

@@ -23,11 +23,11 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	//implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	compileOnly("org.projectlombok:lombok")
-	runtimeOnly("org.postgresql:postgresql")
-	annotationProcessor("org.projectlombok:lombok")
+	//compileOnly("org.projectlombok:lombok")
+	//runtimeOnly("org.postgresql:postgresql")
+	//annotationProcessor("org.projectlombok:lombok")
 }
 
 tasks.withType<Test> {
