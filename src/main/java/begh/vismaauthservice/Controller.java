@@ -28,4 +28,9 @@ public class Controller {
     public Mono<AuthResponse> handleOAuthRedirect(@RequestParam("code") String code) {
             return authService.handleOAuthRedirect(code);
     }
+
+    @GetMapping("/tokens")
+    public Mono<AuthResponse> getTokens(){
+        return authService.getTokens();
+    }
 }

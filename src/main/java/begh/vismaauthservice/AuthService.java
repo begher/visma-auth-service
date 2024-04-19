@@ -1,5 +1,6 @@
 package begh.vismaauthservice;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -32,6 +33,7 @@ public class AuthService {
     private final String credentials = clientId + ":" + clientSecret;
     private final String encodedCredentials = Base64.getEncoder().encodeToString(credentials.getBytes());
 
+    private Long lastRefresh;
 
     public void redirectToAuthorization(HttpServletResponse response) throws IOException {
         String url = "https://identity-sandbox.test.vismaonline.com/connect/authorize?" +
@@ -70,18 +72,41 @@ public class AuthService {
                 .doOnError(error -> System.out.println("Error occurred: " + error.getMessage()));
     }
 
-    private AuthResponse handleResponse(AuthResponse authResponse){
-        Access access = repo.findAccessByCompany(clientId).orElseGet(() -> Access.builder()
-                .company(clientId)
-                .accessToken(authResponse.getAccessToken())
-                .refreshToken(authResponse.getRefreshToken())
-                .lastRenewedAt(LocalDateTime.now())
-                .build());
-
+    private AuthResponse handleResponse(AuthResponse authResponse) {
+        Access access = repo.findAccessByCompany(clientId).orElseGet(Access::new);
+        access.setCompany(clientId);
         access.setAccessToken(authResponse.getAccessToken());
         access.setRefreshToken(authResponse.getRefreshToken());
         access.setLastRenewedAt(LocalDateTime.now());
         repo.save(access);
+        lastRefresh = System.currentTimeMillis();
         return authResponse;
+    }
+
+//    private AuthResponse handleResponse(AuthResponse authResponse){
+//        Access access = repo.findAccessByCompany(clientId).orElseGet(() -> Access.builder()
+//                .company(clientId)
+//                .accessToken(authResponse.getAccessToken())
+//                .refreshToken(authResponse.getRefreshToken())
+//                .lastRenewedAt(LocalDateTime.now())
+//                .build());
+//
+//        access.setAccessToken(authResponse.getAccessToken());
+//        access.setRefreshToken(authResponse.getRefreshToken());
+//        access.setLastRenewedAt(LocalDateTime.now());
+//        repo.save(access);
+//        lastRefresh = System.currentTimeMillis();
+//        return authResponse;
+//    }
+
+    public Mono<AuthResponse> getTokens() {
+        if ((System.currentTimeMillis() - lastRefresh) / 1000 < 3000) {
+            return Mono.fromCallable(() -> repo.findAccessByCompany(clientId))
+                    .flatMap(optionalAccess -> optionalAccess
+                            .map(access -> Mono.just(new AuthResponse(access.getAccessToken(), 3600, "Bearer", access.getRefreshToken())))
+                            .orElseGet(() -> Mono.error(new RuntimeException("Access details not found."))))
+                    .switchIfEmpty(Mono.error(new RuntimeException("Access details not found."))); // Handle case where Optional is empty
+        }
+        return refreshToken();
     }
 }
