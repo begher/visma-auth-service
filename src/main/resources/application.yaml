@@ -1,32 +1,27 @@
 spring:
-  security:
-    oauth2:
-      client:
-        registration:
-          visma:
-            client-id: imatsab
-            client-secret: M2wAPQ2Y8Q25YHoLEkoA40B4Cv72f6XZGF7ZYZK91380AY98O07R8D7hVMy1vF8
-            authorization-grant-type: code
-            redirect-uri: https://api.imats.se/visma-auth-service/login/oauth2/code/visma
-            scope:
-              - ea:api
-              - ea:sales
-              - ea:purchase
-              - ea:accounting
-              - offline_access
+  datasource:
+    url: jdbc:postgresql://container-2.int.henrikssons.org:5432/postgres #jdbc:postgresql://postgres/postgres
+    username: begh
+    password: hemligt
+    driver-class-name: org.postgresql.Driver
 
-        provider:
-          visma:
-            authorization-uri: https://identity-sandbox.test.vismaonline.com/connect/authorize
-            token-uri: https://identity-sandbox.test.vismaonline.com/connect/token
-            user-info-uri: https://identity-sandbox.test.vismaonline.com/connect/userinfo
-            jwk-set-uri: https://identity-sandbox.test.vismaonline.com/connect/jwks
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
 
-  #datasource:
-    #url: jdbc:postgresql://postgres/postgres
-    #username: begh
-    #password: hemligt
-    #driver-class-name: org.postgresql.Driver
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "health,info,uptime"
 
-
-
+auth:
+  redirectUri: https://api.imats.se/visma-auth-service/login/oauth2/code/visma
+  clientId: imatsab
+  clientSecret: M2wAPQ2Y8Q25YHoLEkoA40B4Cv72f6XZGF7ZYZK91380AY98O07R8D7hVMy1vF8
