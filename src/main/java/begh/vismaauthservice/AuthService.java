@@ -1,9 +1,8 @@
 package begh.vismaauthservice;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
+import lombok.Setter;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
@@ -16,24 +15,25 @@ import java.time.LocalDateTime;
 import java.util.Base64;
 
 @Service
+@Setter
 @RequiredArgsConstructor
 public class AuthService {
 
     private final WebClient webClient;
     private final AccessRepository repo;
 
-    @Value("${auth.redirectUri}")
-    private String redirectUri;
+    //@Value("${auth.redirectUri}")
+    private String redirectUri = "https://api.imats.se/visma-auth-service/login/oauth2/code/visma";
 
-    @Value("${auth.clientId}")
-    private String clientId;
+    //@Value("${auth.clientId}")
+    private String clientId = "imatsab";
 
-    @Value("${auth.clientSecret}")
-    private String clientSecret;
+    //@Value("${auth.clientSecret}")
+    private String clientSecret = "M2wAPQ2Y8Q25YHoLEkoA40B4Cv72f6XZGF7ZYZK91380AY98O07R8D7hVMy1vF8";
+
     private final String credentials = clientId + ":" + clientSecret;
     private final String encodedCredentials = Base64.getEncoder().encodeToString(credentials.getBytes());
-
-    private Long lastRefresh;
+    private Long lastRefresh = 30000L;
 
     public void redirectToAuthorization(HttpServletResponse response) throws IOException {
         String url = "https://identity-sandbox.test.vismaonline.com/connect/authorize?" +
