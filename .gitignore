@@ -36,6 +36,6 @@ out/
 ### VS Code ###
 .vscode/
 
-### application.yaml ###
+### project files ###
 /src/main/resources/application.yaml
-
+/src/main/resources/key.json

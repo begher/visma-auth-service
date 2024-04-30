@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "holidays-415709",
+  "private_key_id": "076805989ffbce403e09fca51a6fd83d39c10673",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQD4g+9a+rhSVS19\nph7DZErbQESVHU9jXWi4ApDvC59KTfdG6b1UQBHweZugmQfs8a61jSG/IR3LuyLx\ne8iPKImnWbCYKL/yfsQiV1RkPQdX+g7NtGO4v3J5MTdjzRzDF93rkDDnHrJ13Sbs\n1yfKZOi00TxCrucjbzjX9ddYVYikd3GVlLlgMpbbtYD5K4enZF67BuLWwTyEkm+/\nTERStqYBVaFHh/QOVt4aFS+OkpvBlVjtNh0Y92ZBeker7aA7dioGKusKs+5Wgscv\nA6SGtZp9Njpy0POSIcAZwOmakjc9eR+7+rAsjJU9WyduR3uEUjyY2UyWc+ZHDMaZ\nFDN2iGNnAgMBAAECggEAEqSvLaeWcVLDhWQTdbwN45HYM0mOHZmx0/AZWF2KVyQv\nM0owsmPWFLDCzJL+Zbeh0CvkxrZgylphHjWXj6nOXdgcJ+YStEnvQ9ZCVfzAEskH\nGEZ6nq76Ev5utdV63WXqd5QLHyON5squ82CWsxfL31i9CRGe9GkRHh5qx80u4YuQ\niFr3A6LpoEUzHAVrK3oibsjbfdDm3ZLxeQ8BLhEKzZGCcCSXvpP+nGvWwz4n8w9L\nuTSeBr0y/V3EHtuDKoRAHp3pLZIYYomXqAVfdlXdcFWeSPcCMxKsd4l2TIyK0tKP\nXQL6G2sulCpWUxIGD0yElXt9Hc0K4qKIsDBM05HY1QKBgQD/deaWkLvyPM5odj4U\nDYz9DQhJ1cOmmsT4RD1sNw4w6ki8UIbQlz3Il/+JfCQBeYn9ELAj4D8bpWa4c8Y0\nowCKUvmEuoH1QRNLze0MgICqkZjoFQO0ma2sc6wuouywuJ0Jv8JuHZJsULxXFvB6\nvZFaSePYRsL0ElvLCxTnSCTzRQKBgQD5CkeeKG2YZp/lmhjXcyNHE4qFLq/qFcJf\nm1D1yLMcxjjd5sh+Iq5HjSbmc6Zv8Ai27lbj/BK5b7MnQYut05a7pGdUEFf8b3Bb\nZxMh0MQxOzMr9fWyCj3lc7vAgx+H9TtdDnPRxqM0LeTZEVBvfEo5PRGyakpcAH7t\nTVPU7DLwuwKBgQDwy+KqBA2U/WoWn3ZOkqNWGAW7C0sb7QFDf5diPNccloovL7yU\nPCuZvGS75I9P8I94QlW1y3fRCGy16zNmhEtLF4FpciBz3H5i0t3iDfK6VPmLsdtH\nTiCd0H75isuOnMYx3VZZU3ikrsmJUe8l0zCCqemiALldNTzfPDfc9m0V/QKBgB6O\nRVVBbpj5VnsMWintJZHt8tv+a3UUMGIco2VUt607IPURAN6BENMUnYY/AFfRorAX\nNDAK2J1J+DhD0YiFYoQpWsg0rSb64VVFo1JN1BSaR+AH8JpkqU2C0rF/JRpAW4VC\nZbGCZrnbO63qcu0K2eyF8qrqYa9CHFCvYS7JwEJLAoGBAM+hYBmskAKgo3kzDsA6\nOh2Q1VBeBdx+EVI5Zr4RmbMD4iUIs30QQfIEUEOKXFBQOR5O33loJDMBHVJaD05G\n4hqfFQqxI91gCY/tGCk5AEB7QWcBmTmJt0B+wv6xfuMxDKroli7RrMPlrUKI/Twv\nJvxmUHy70vE8YJej+Xm7mbi4\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-1kcl8@holidays-415709.iam.gserviceaccount.com",
+  "client_id": "112461133544745425397",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-1kcl8%40holidays-415709.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
