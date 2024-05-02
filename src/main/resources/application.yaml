@@ -12,11 +12,11 @@ spring:
       hibernate:
         format_sql: true
 
-management:
-  endpoint:
-    health:
-      show-details: always
-  endpoints:
-    web:
-      exposure:
-        include: "health,info,uptime"
+#management:
+#  endpoint:
+#    health:
+#      show-details: always
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "health,info,uptime"
