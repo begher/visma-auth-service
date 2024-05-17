@@ -83,22 +83,6 @@ public class AuthService {
         return authResponse;
     }
 
-//    private AuthResponse handleResponse(AuthResponse authResponse){
-//        Access access = repo.findAccessByCompany(clientId).orElseGet(() -> Access.builder()
-//                .company(clientId)
-//                .accessToken(authResponse.getAccessToken())
-//                .refreshToken(authResponse.getRefreshToken())
-//                .lastRenewedAt(LocalDateTime.now())
-//                .build());
-//
-//        access.setAccessToken(authResponse.getAccessToken());
-//        access.setRefreshToken(authResponse.getRefreshToken());
-//        access.setLastRenewedAt(LocalDateTime.now());
-//        repo.save(access);
-//        lastRefresh = System.currentTimeMillis();
-//        return authResponse;
-//    }
-
     public Mono<AuthResponse> getTokens() {
         if ((System.currentTimeMillis() - lastRefresh) / 1000 < 3000) {
             return Mono.fromCallable(() -> repo.findAccessByCompany(clientId))
