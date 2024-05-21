@@ -16,7 +16,6 @@ import java.time.format.DateTimeFormatter;
 @Component
 @Endpoint(id = "uptime")
 public class HealthUptime {
-
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("ss:mm:HH:dd:MM:yyyy");
 
     @ReadOperation
