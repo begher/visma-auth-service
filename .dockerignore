@@ -22,7 +22,3 @@
 # Exclude logs and other generated files
 logs/
 *.log
-
-### project files ###
-/src/main/resources/application.yaml
-/src/main/resources/key.json
