@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://postgres/postgres #jdbc:postgresql://container-2.int.henrikssons.org:5432/postgres #jdbc:postgresql://postgres/postgres
+    url: jdbc:postgresql://postgres/postgres
     username: begh
     password: hemligt
     driver-class-name: org.postgresql.Driver
